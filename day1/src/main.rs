@@ -11,7 +11,7 @@ impl util::Task for Task {
     type Input = Rotations;
     type Output = usize;
 
-    fn solve_1(input: Self::Input) -> Result<Self::Output> {
+    fn solve_1(input: Self::Input) -> Self::Output {
         let rotations = input.0;
 
         let mut pos = 50;
@@ -25,10 +25,10 @@ impl util::Task for Task {
             }
         }
 
-        Ok(res)
+        res
     }
 
-    fn solve_2(input: Self::Input) -> Result<Self::Output> {
+    fn solve_2(input: Self::Input) -> Self::Output {
         let rotations = input.0;
 
         let mut pos = 50;
@@ -58,7 +58,7 @@ impl util::Task for Task {
             res += full_rotations;
         }
 
-        Ok(res)
+        res
     }
 }
 

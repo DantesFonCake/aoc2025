@@ -11,7 +11,7 @@ impl util::Task for Task {
     type Input = Ranges;
     type Output = usize;
 
-    fn solve_1(input: Self::Input) -> Result<Self::Output> {
+    fn solve_1(input: Self::Input) -> Self::Output {
         let ranges = input.0;
         let mut res = 0usize;
 
@@ -45,10 +45,10 @@ impl util::Task for Task {
                 id = new_id;
             }
         }
-        Ok(res)
+        res
     }
 
-    fn solve_2(input: Self::Input) -> Result<Self::Output> {
+    fn solve_2(input: Self::Input) -> Self::Output {
         let ranges = input.0;
         let mut res = 0usize;
 
@@ -92,7 +92,7 @@ impl util::Task for Task {
                 }
             }
         }
-        Ok(res)
+        res
     }
 }
 

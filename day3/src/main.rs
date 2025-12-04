@@ -12,7 +12,7 @@ impl util:: Task for Task {
     type Input = Banks;
     type Output = usize;
 
-    fn solve_1(input: Self::Input) -> Result<Self::Output> {
+    fn solve_1(input: Self::Input) -> Self::Output {
         let banks = input.0;
         let mut res = 0usize;
         for bank in banks {
@@ -32,10 +32,10 @@ impl util:: Task for Task {
             res += (left_val as usize) * 10 + (right_val as usize);
         }
 
-        Ok(res)
+        res
     }
 
-    fn solve_2(input: Self::Input) -> Result<Self::Output> {
+    fn solve_2(input: Self::Input) -> Self::Output {
         let banks = input.0;
         let mut res = 0usize;
         for bank in banks {
@@ -75,7 +75,7 @@ impl util:: Task for Task {
             res += values.iter().fold(0usize, |acc, x| acc * 10 + *x);
         }
 
-        Ok(res)
+        res
     }
 }
 

@@ -12,7 +12,7 @@ impl util::Task for Task {
     type Input = Floor;
     type Output = usize;
 
-    fn solve_1(input: Self::Input) -> Result<Self::Output> {
+    fn solve_1(input: Self::Input) -> Self::Output {
         let mut count = 0usize;
         //println!("{input:?}");
         for x in 0..input.cols {
@@ -28,10 +28,10 @@ impl util::Task for Task {
                 }
             }
         }
-        Ok(count)
+        count
     }
 
-    fn solve_2(mut input: Self::Input) -> Result<Self::Output> {
+    fn solve_2(mut input: Self::Input) -> Self::Output {
         let mut count = 0usize;
         loop {
             let old_count = count;
@@ -56,7 +56,7 @@ impl util::Task for Task {
                 break;
             }
         }
-        Ok(count)
+        count
     }
 }
 
@@ -79,15 +79,9 @@ fn read_mask<const N: usize>(
 }
 
 const MASK3: [(i32, i32); 9] = [
-    (-1, -1),
-    (0, -1),
-    (1, -1),
-    (-1, 0),
-    (0, 0),
-    (1, 0),
-    (-1, 1),
-    (0, 1),
-    (1, 1),
+    (-1, -1), (0, -1), (1, -1),
+    (-1, 0), (0, 0), (1, 0),
+    (-1, 1), (0, 1), (1, 1),
 ];
 
 struct Floor {
